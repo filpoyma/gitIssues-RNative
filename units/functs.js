@@ -1,8 +1,6 @@
-import * as Font from 'expo-font';
-
-export const fetchFonts = () => {
-  return Font.loadAsync({
-    'open-sans': require('../assets/fonts/OpenSans-Regular.ttf'),
-    'open-sans-bold': require('../assets/fonts/OpenSans-Bold.ttf'),
-  });
-};
+export function hashCode(s) {
+  let i, h;
+  for (i = 0, h = 0; i < s.length; i++)
+    h = (Math.imul(31, h) + s.charCodeAt(i)) | 0;
+  return h.toString();
+}

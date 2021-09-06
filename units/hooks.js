@@ -1,4 +1,5 @@
 import React from 'react';
+import {hashCode} from './functs';
 
 export const useFetch = url => {
   const cache = React.useRef({});
@@ -7,20 +8,20 @@ export const useFetch = url => {
 
   React.useEffect(() => {
     if (!url) return;
-
+    let hash = hashCode(url);
     (async () => {
       setLoading(true);
       console.log('file-ull :', url);
-      if (cache.current[url]) {
+      if (cache.current[hash]) {
         console.log('cached data loaded');
-        const data = cache.current[url];
+        const data = cache.current[hash];
         setData(data);
         setLoading(false);
       } else {
         console.log('requesting...');
         const response = await fetch(url);
         let data = await response.json();
-        cache.current[url] = data; // set response in cache;
+        cache.current[hash] = data; // set response in cache;
         setData(data);
         setLoading(false);
       }
