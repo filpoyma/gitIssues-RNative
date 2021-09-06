@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import Spinner from 'react-native-loading-spinner-overlay';
 
@@ -22,7 +22,7 @@ export default function App() {
   } = useFetch(
     `${BASEURL}/repos/${REPONAME}/issues?labels=${query}&per_page=50`,
   );
-  issues = issues.map(issue => ({
+  issues = issues?.map(issue => ({
     id: issue.id.toString(),
     number: issue.number,
     title: issue.title,

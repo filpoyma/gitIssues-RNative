@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, FlatList} from 'react-native';
+import {View, StyleSheet, FlatList, SafeAreaView} from 'react-native';
 
 import Context from '../context';
 import Card from '../components/Card';
@@ -9,7 +9,7 @@ import {REPONAME} from '../constants/api';
 const IssueListScreen = props => {
   const {issues, filters} = React.useContext(Context);
   return (
-    <View style={styles.screen}>
+    <SafeAreaView style={styles.screen}>
       <FilterSelector {...props} selectedFilters={filters} />
       <View style={styles.cardsContainer}>
         <FlatList
@@ -20,7 +20,7 @@ const IssueListScreen = props => {
           )}
         />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

@@ -4,13 +4,13 @@ export const useFetch = url => {
   const cache = React.useRef({});
   const [isLoading, setLoading] = React.useState(false);
   const [data, setData] = React.useState([]);
-  console.log('file-url :', url);
 
   React.useEffect(() => {
     if (!url) return;
 
     (async () => {
       setLoading(true);
+      console.log('file-ull :', url);
       if (cache.current[url]) {
         console.log('cached data loaded');
         const data = cache.current[url];
@@ -18,16 +18,11 @@ export const useFetch = url => {
         setLoading(false);
       } else {
         console.log('requesting...');
-        try {
-          const response = await fetch(url);
-          const data = await response.json();
-          cache.current[url] = data; // set response in cache;
-          setData(data);
-        } catch (err) {
-          console.error('Request error', err.message);
-        } finally {
-          setLoading(false);
-        }
+        const response = await fetch(url);
+        let data = await response.json();
+        cache.current[url] = data; // set response in cache;
+        setData(data);
+        setLoading(false);
       }
     })();
   }, [url]);
