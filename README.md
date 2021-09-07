@@ -30,4 +30,6 @@ npx react-native run-android
 
 Open constants/api.js in your text editor and edit constant "REPONAME".
 
+## Run on device
 
+Also you can download [apk](https://cloud.mail.ru/public/LBGd/P713RjfDj/) for installation on your device.
