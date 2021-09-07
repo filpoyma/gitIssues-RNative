@@ -1,5 +1,5 @@
 import React from 'react';
-import {hashCode} from './functs';
+import { hashCode } from './functs';
 
 export const useFetch = url => {
   const cache = React.useRef({});
@@ -28,7 +28,7 @@ export const useFetch = url => {
     })();
   }, [url]);
 
-  return {isLoading, data, setData};
+  return { isLoading, data, setData };
 };
 
 // by nuber issue - https://api.github.com/repos/vuejs/vue/issues/{number}

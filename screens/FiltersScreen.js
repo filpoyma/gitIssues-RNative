@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  Switch,
-  Platform,
-  ScrollView,
-} from 'react-native';
+import { View, Text, StyleSheet, Switch, Platform, ScrollView, SafeAreaView } from 'react-native';
 
 import Context from '../context';
 import Colors from '../constants/colors';
@@ -17,7 +10,7 @@ const FilterSwitch = props => {
     <View style={styles.filterContainer}>
       <Text style={styles.text}>{props.label}</Text>
       <Switch
-        trackColor={{true: Colors.accent, false: Colors.primary}}
+        trackColor={{ true: Colors.accent, false: Colors.primary }}
         thumbColor={Platform.OS === 'android' ? Colors.accent : ''}
         value={props.state}
         onValueChange={props.onChange}
@@ -26,29 +19,27 @@ const FilterSwitch = props => {
   );
 };
 
-const FiltersScreen = ({navigation}) => {
-  const {labels, filters, setFilterHandler} = React.useContext(Context);
+const FiltersScreen = ({ navigation }) => {
+  const { labels, filters, setFilterHandler } = React.useContext(Context);
 
   const [localFilters, setLocalFilter] = React.useState(filters);
 
   const applyFilterHandler = () => {
     setFilterHandler(localFilters);
-    navigation.navigate({routeName: 'IssueListScreen'});
+    navigation.navigate({ routeName: 'IssueListScreen' });
   };
 
   return (
-    <View style={styles.screen}>
+    <SafeAreaView style={styles.screen}>
       <Text style={styles.title}>Available Filters</Text>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.scroll}>
           {labels.map(label => (
             <FilterSwitch
               key={label}
               label={label}
               state={localFilters[label]}
-              onChange={newValue =>
-                setLocalFilter(state => ({...state, [label]: newValue}))
-              }
+              onChange={newValue => setLocalFilter(state => ({ ...state, [label]: newValue }))}
             />
           ))}
         </View>
@@ -58,7 +49,7 @@ const FiltersScreen = ({navigation}) => {
           Apply Filter
         </CustomButton>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

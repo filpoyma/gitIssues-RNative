@@ -1,11 +1,11 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 import Colors from '../../constants/colors';
 
 const IssueButton = props => {
   return (
-    <View style={{...styles.button, ...props.style}}>
+    <View style={{ ...styles.button, ...props.style }}>
       <Text style={styles.buttonText}>{props.children}</Text>
     </View>
   );

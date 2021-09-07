@@ -1,9 +1,9 @@
 import React from 'react';
-import {StyleSheet, View, Image, TouchableOpacity} from 'react-native';
+import { StyleSheet, View, Image, TouchableOpacity } from 'react-native';
 import colors from '../constants/colors';
 import IssueButton from './Buttons/IssueButton';
 
-const FilterSelector = ({navigation, selectedFilters}) => {
+const FilterSelector = ({ navigation, selectedFilters }) => {
   const labels = Object.entries(selectedFilters)
     .map(el => el[1] && el[0])
     .filter(el => el);
@@ -12,7 +12,8 @@ const FilterSelector = ({navigation, selectedFilters}) => {
     <TouchableOpacity
       style={styles.container}
       activeOpacity={0.5}
-      onPress={() => navigation.navigate({routeName: 'FiltersScreen'})}>
+      onPress={() => navigation.navigate({ routeName: 'FiltersScreen' })}
+    >
       <View style={styles.imageContainer}>
         <Image style={styles.image} source={require('../assets/tag.png')} />
       </View>

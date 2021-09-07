@@ -1,14 +1,6 @@
-import {Text, View, TouchableOpacity} from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 
-const CustomSwitch = ({
-  navigation,
-  selectionMode,
-  roundCorner,
-  option1,
-  option2,
-  onSelectSwitch,
-  selectionColor,
-}) => {
+const CustomSwitch = ({ navigation, selectionMode, roundCorner, option1, option2, onSelectSwitch, selectionColor }) => {
   const [getSelectionMode, setSelectionMode] = useState(selectionMode);
   const [getRoundCorner, setRoundCorner] = useState(roundCorner);
 
@@ -30,7 +22,8 @@ const CustomSwitch = ({
           flexDirection: 'row',
           justifyContent: 'center',
           padding: 2,
-        }}>
+        }}
+      >
         <TouchableOpacity
           activeOpacity={1}
           onPress={() => updatedSwitchData(1)}
@@ -41,11 +34,13 @@ const CustomSwitch = ({
             borderRadius: getRoundCorner ? 25 : 0,
             justifyContent: 'center',
             alignItems: 'center',
-          }}>
+          }}
+        >
           <Text
             style={{
               color: getSelectionMode == 1 ? 'white' : selectionColor,
-            }}>
+            }}
+          >
             {option1}
           </Text>
         </TouchableOpacity>
@@ -60,11 +55,13 @@ const CustomSwitch = ({
             borderRadius: getRoundCorner ? 25 : 0,
             justifyContent: 'center',
             alignItems: 'center',
-          }}>
+          }}
+        >
           <Text
             style={{
               color: getSelectionMode == 2 ? 'white' : selectionColor,
-            }}>
+            }}
+          >
             {option2}
           </Text>
         </TouchableOpacity>
