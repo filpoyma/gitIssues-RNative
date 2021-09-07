@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Image, TouchableOpacity, Text } from 'react-native';
 import colors from '../constants/colors';
 import IssueButton from './Buttons/IssueButton';
 
@@ -18,10 +18,9 @@ const FilterSelector = ({ navigation, selectedFilters }) => {
         <Image style={styles.image} source={require('../assets/tag.png')} />
       </View>
       <View style={styles.labelsContainer}>
-        {labels.map(label => (
-          <IssueButton key={label}>{label}</IssueButton>
-        ))}
+        {labels.map((label, i) => (i < 3 ? <IssueButton key={label}>{label}</IssueButton> : null))}
       </View>
+      <View style={styles.dotsContainer}>{labels.length > 3 && <Text>...</Text>}</View>
     </TouchableOpacity>
   );
 };
@@ -55,6 +54,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingLeft: 10,
     alignItems: 'center',
+  },
+  dotsContainer: {
+    justifyContent: 'center',
+    paddingLeft: 5,
   },
 });
 export default FilterSelector;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import TitleText from '../Text/TitleText';
 import IssueButton from '../Buttons/IssueButton';
 import BodyText from '../Text/BodyText';
@@ -12,9 +12,12 @@ const DetailsCard = props => {
         <TitleText style={styles.title}>{cut ? issue.title?.slice(0, 33) + '...' : issue?.title}</TitleText>
       </View>
       <View style={styles.buttonsContainer}>
-        {issue.labels?.map(label => (
-          <IssueButton key={label.id}>{label.name}</IssueButton>
-        ))}
+        {issue.labels?.map((label, i) => (i < 3 ? <IssueButton key={label.id}>{label.name}</IssueButton> : null))}
+        {issue.labels?.length > 3 && (
+          <View style={styles.dotsContainer}>
+            <Text>...</Text>
+          </View>
+        )}
       </View>
       {!cut && (
         <View style={styles.textContainer}>
@@ -36,6 +39,10 @@ const styles = StyleSheet.create({
   },
   buttonsContainer: {
     flexDirection: 'row',
+  },
+  dotsContainer: {
+    paddingBottom: 5,
+    justifyContent: 'flex-end',
   },
   textContainer: {
     paddingTop: 30,

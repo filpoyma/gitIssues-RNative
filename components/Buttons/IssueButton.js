@@ -14,7 +14,7 @@ const IssueButton = props => {
 const styles = StyleSheet.create({
   button: {
     marginRight: 10,
-    paddingVertical: 6,
+    paddingVertical: 3,
     paddingHorizontal: 20,
     borderRadius: 5,
     borderColor: Colors.accent,
