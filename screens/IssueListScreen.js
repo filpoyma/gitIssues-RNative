@@ -2,9 +2,10 @@ import React from 'react';
 import { View, StyleSheet, FlatList, SafeAreaView } from 'react-native';
 
 import Context from '../context';
-import Card from '../components/Card';
+import Card from '../components/Cards/Card';
 import FilterSelector from '../components/FilterSelector';
 import { REPONAME } from '../constants/api';
+import colors from '../constants/colors';
 
 const IssueListScreen = props => {
   const { issues, filters } = React.useContext(Context);

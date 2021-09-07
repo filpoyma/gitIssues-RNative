@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, ScrollView, SafeAreaView } from 'react-native';
 import Spinner from 'react-native-loading-spinner-overlay';
 
-import DetailsCard from '../components/DetailsCard';
+import DetailsCard from '../components/Cards/DetailsCard';
 import { useFetch } from '../units/hooks';
 import { BASEURL, REPONAME } from '../constants/api';
 

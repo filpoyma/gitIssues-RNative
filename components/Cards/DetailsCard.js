@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import TitleText from './Text/TitleText';
-import IssueButton from './Buttons/IssueButton';
-import BodyText from './Text/BodyText';
+import TitleText from '../Text/TitleText';
+import IssueButton from '../Buttons/IssueButton';
+import BodyText from '../Text/BodyText';
 
 const DetailsCard = props => {
   const { issue = {}, cut = false, style } = props;
@@ -28,6 +28,7 @@ const DetailsCard = props => {
 const styles = StyleSheet.create({
   card: {
     paddingTop: 20,
+    paddingBottom: 7,
     paddingHorizontal: 20,
   },
   titleContainer: {
