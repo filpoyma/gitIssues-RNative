@@ -2,7 +2,7 @@
 
 git-Issues-Informer is a React Native application for get information about gitHub repo issues.
 
-## Installation on Linux
+## Installation 
 
 Use the package manager [npm](https://nodejs.org/en/download/) to install dependencies of project.
 Run npm install inside your React Native project folder:
@@ -11,7 +11,7 @@ Run npm install inside your React Native project folder:
 npm install
 ```
 
-## Running your React Native application
+## Running your React Native application on Linux
 ### Step 1: Start your android emulator
 ### Step 2: Start Metro   
 
