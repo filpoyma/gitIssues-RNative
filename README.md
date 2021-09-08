@@ -28,7 +28,7 @@ npx react-native run-android
 
 ## Change repository name
 
-Open constants/api.js in your text editor and edit constant "REPONAME".
+Open ./constants/api.js file in your text editor and edit constant "REPONAME".
 
 ## Run on device
 
