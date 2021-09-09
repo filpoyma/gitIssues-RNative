@@ -4,11 +4,11 @@ git-Issues-Informer is a React Native application for get information about gitH
 
 ## Installation 
 
-Use the package manager [npm](https://nodejs.org/en/download/) to install dependencies of project.
+Use the package manager [yarn](https://classic.yarnpkg.com/en/docs/install/#debian-stable) to install dependencies of project.
 Run npm install inside your React Native project folder:
 
 ```bash
-npm install
+yarn install
 ```
 
 ## Running your React Native application on Linux
